@@ -1,0 +1,18 @@
+<!-- <app-header></app-header> -->
+<!-- <app-register></app-register>
+<app-login></app-login> -->
+
+<!-- Main Content -->
+<!-- <main> -->
+    <!-- <app-post-create (postCreated)="onPostAdded($event)"></app-post-create> -->
+    <!-- app.component.html -->
+    <!-- <app-post-edit [selectedPost]="selectedPost" [post]="yourPostVariable"></app-post-edit>
+<app-post-list [posts]="posts"></app-post-list>
+</main> -->
+<app-header *ngIf="authService.isLoggedIn()"></app-header>
+<!-- <app-story *ngIf="authService.isLoggedIn()"></app-story>  -->
+<!-- Main Content -->
+<main>
+    
+    <router-outlet></router-outlet>
+</main>

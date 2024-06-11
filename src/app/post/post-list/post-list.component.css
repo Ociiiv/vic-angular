@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=PT+Sans+Caption:wght@400;700&family=Zen+Dots&display=swap');
+:host {
+    display: block;
+    margin-top: 1rem;
+}
+.info-text {
+    text-align: center;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #dde1e7;
+}
+.container {
+    /* background: #dde1e7; */
+    padding: 25px;
+    border-radius: 3px;
+    /* box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288); */
+    display: flex; /* Add this to use flexbox */
+    justify-content: center; /* Center the pagination horizontally */
+    align-items: center; /* Center the pagination vertically */
+   }
+   
+   .pagination {
+    display: flex;
+    list-style: none;
+    justify-content: center; /* Center the pagination items */
+   }
+   
+   .pagination li {
+    flex: 1;
+    margin: 0px 5px;
+    background: #dde1e7;
+    border-radius: 3px;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
+   }
+   
+   .pagination li a {
+    font-size: 14px; /* Reduce the font size */
+    text-decoration: none;
+    color: #4d3252;
+    height: 30px; /* Reduce the height */
+    width: 40px; /* Reduce the width */
+    display: block;
+    line-height: 30px; /* Adjust line-height to match the new height for vertical centering */
+    text-align: center; /* Center the text horizontally */
+   }
+   
+   .pagination li:first-child a {
+    width: 80px; /* Adjust the width for the first item */
+   }
+   
+   .pagination li:last-child a {
+    width: 60px; /* Adjust the width for the last item */
+   }
+   
+   .pagination a.active {
+      color: #0800ff !important; /* Use !important to force the style */
+   }
+   
+   .pagination li:first-child {
+    margin: 0 10px 0 0; /* Adjust the margin for the first item */
+   }
+   
+   .pagination li:last-child {
+    margin: 0 0 0 10px; /* Adjust the margin for the last item */
+   }
+
+
+   /* story */
+   .story {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding: 10px 5px;
+    gap: 20px; /* Adds space between cards */
+    justify-content: center;
+}
+
+.story-item {
+    flex-shrink: 0; /* Prevents items from shrinking */
+    width: 160px; /* Fixed width for items */
+    height: 160px;
+    border-radius: 15px;
+    background: #3e7fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    position: relative;
+    font-size: 13px;
+}
+
+.story-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity:.2;
+    border-radius: 15px;
+}
+
+.story-item span {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 5px;
+    font-family: sans-serif;
+}
+
+.rounded {
+    background-image: url(https://example.com/favicon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 32px;
+    height: 32px;
+    margin: 5px;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #3877e1;
+}
+
+.create-card {
+  position: absolute;
+  bottom: 10px; /* Positions the button at the bottom of the card */
+  left: 50%; /* Centers the button horizontally */
+  transform: translateX(-50%); /* Adjusts the button's centering */
+  background-color: #007bff; /* Sets the button background color to blue */
+  border: none;
+  padding: 10px; /* Provides padding around the icon */
+  border-radius: 50%; /* Makes the button round */
+  font-size: 24px; /* Increases the font size to make the icon larger */
+  cursor: pointer; /* Changes cursor to indicate clickable area */
+  width: 50px; /* Adjusts the width of the button */
+  height: 50px; /* Adjusts the height of the button */
+  text-align: center; /* Centers the icon within the button */
+  color: #ffffff; /* Sets the icon color to white for contrast */
+}
+   /* end of story */
+
+  p .title {
+    font-family: "Zen Dots", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 50px;
+  }
+  .title{
+    font-size: 25px;
+  }
+  .content{
+   
+        font-family: "PT Sans Caption", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      
+  }

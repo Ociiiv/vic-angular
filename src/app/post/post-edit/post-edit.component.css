@@ -1,0 +1,100 @@
+/* post-edit-modal.component.css */
+
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease; /* Add fade-in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    position: relative;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1); /* Add subtle box-shadow */
+    border: 1px solid #e5e5e5; /* Add subtle border */
+    transition: all 0.3s ease;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333333; /* Black text */
+}
+
+input[type="text"],
+textarea {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease; /* Add transition for border-color */
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #6fb9e4; /* Add focus effect */
+}
+
+button[type="submit"] {
+    padding: 12px 24px;
+    background-color: #6fb9e4;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #5a9cd5; /* Slightly darker shade on hover */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Add hover effect */
+    color: #333333; /* Black color */
+}
+
+.close-button:hover {
+    color: #6fb9e4; /* Change color on hover */
+}
+
+.custom-icon {
+    font-size: 26px; /* Adjust the size as needed */
+}
+
+/* post-edit.component.css */
+
+.post-image {
+    max-width: 130px; /* Adjust the width as needed */
+    max-height: 130px; /* Adjust the height as needed */
+    object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}

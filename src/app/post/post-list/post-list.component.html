@@ -1,0 +1,84 @@
+<!-- story -->
+<div class="story">
+    <div class="story-item" style="background-image:url(https://scontent.fwnp1-1.fna.fbcdn.net/v/t39.30808-6/339443135_1264591487776723_1686334611574014372_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFigYiUEm1G1q6Y47rHHgsvNpZK-nCbh-o2lkr6cJuH6vXpSm5yY2e0iX-i5cS1FxbQ9eFfdPVGLHI6-20y2XkA&_nc_ohc=jl86aLuUglYQ7kNvgEwXADI&_nc_ht=scontent.fwnp1-1.fna&oh=00_AYAZ_Jf7wziqglOU-2275tL5VATWoOmInB5uDR4dvjmMrg&oe=664FA9AE);">
+        <div class="create-card">
+                <i class="fas fa-plus"></i>
+        </div>
+    </div>
+    <div class="story-item" style="background-image:url(https://tse1.mm.bing.net/th?id=OIP.-KQHkoW7lCZcG_8o2bS9LAHaEc&pid=Api&P=0&h=180);">
+        
+        <span></span> <!-- Corrected closing tag -->
+    </div>
+    <div class="story-item" style="background-image:url(https://tse3.mm.bing.net/th?id=OIP.yH9QGBDDjIWzot6_UepWNAHaG2&pid=Api&P=0&h=180);">
+        
+        <span></span> <!-- Corrected closing tag -->
+    </div>
+    <div class="story-item" style="background-image:url(https://tse1.mm.bing.net/th?id=OIP.vNy83QJY7ps5fG3V18h34QHaFa&pid=Api&P=0&h=180);">
+        
+        <span></span> <!-- Corrected closing tag -->
+    </div>
+    <div class="story-item" style="background-image:url(https://tse2.mm.bing.net/th?id=OIP.0eazDteSHGJd7AP6Zj-EeAHaFa&pid=Api&P=0&h=180);">
+       
+        <span></span> <!-- Corrected closing tag -->
+    </div>
+    <div class="story-item" style="background-image:url(https://tse1.mm.bing.net/th?id=OIP.H_s6Unrpt8661e2407jlYwHaFa&pid=Api&P=0&h=180);">
+       
+        <span></span> <!-- Corrected closing tag -->
+    </div>
+</div>
+<!-- end of the story -->
+
+<br>
+
+<mat-accordion multi="true" *ngIf="getPostsForCurrentPage().length > 0">
+    <mat-expansion-panel *ngFor="let post of getPostsForCurrentPage()" style="width: 60%;margin-left: auto;margin-right: auto;">
+
+        <mat-expansion-panel-header><div class="title">{{ post.title }}
+        </div>
+        </mat-expansion-panel-header>
+        <p> {{post.content}}  </p>
+        <img *ngIf="post.imageUrl" [src]="post.imageUrl" alt="Post Image" class="post-image" style="width: 100%;height: 400px;">
+        <mat-action-row>
+            <a [routerLink]="['/edit', post._id]">
+                <button mat-button color="primary" (click)="selectedPost = post; openEditModal()">
+                   Edit
+                </button>
+                
+  <app-post-edit *ngIf="selectedPost" [post]="selectedPost" (postUpdated)="onPostUpdated($event)"></app-post-edit>
+            </a>
+            
+            <button mat-button color="warn" (click)="deletePost(post._id)">
+     Delete
+  </button>
+  
+        </mat-action-row>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <p class="info-text mat-body-1" *ngIf="getPostsForCurrentPage().length <= 0">No post added</p>
+  
+  
+  <div class="container">
+    <ul class="pagination">
+        <!-- Pass the $event object to the nextPage and previousPage methods -->
+        <li><a href="#" (click)="previousPage($event)"><</a></li>
+        <!-- Dynamically generate page numbers with a class for the current page -->
+        <li *ngFor="let page of [].constructor(totalPages); let i = index">
+            <!-- Pass the $event object to the method that sets the current page -->
+            <a href="#" (click)="setCurrentPage(i + 1, $event)" [class.active]="currentPage === i + 1">{{ i + 1 }}</a>
+        </li>
+        <li><a href="#" (click)="nextPage($event)">></a></li>
+    </ul>
+   </div>
+  
+  <script>
+     $(document).ready(function(){
+  $('.story').owlCarousel({
+    center: false,
+    items:3,
+    loop:true,
+    margin:5,
+	 stagePadding: 15,
+   
+});
+});
+  </script>

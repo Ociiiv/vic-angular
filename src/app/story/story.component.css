@@ -1,0 +1,73 @@
+
+
+   /* story */
+   .story {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding: 10px 5px;
+    gap: 20px; /* Adds space between cards */
+}
+
+.story-item {
+    flex-shrink: 0; /* Prevents items from shrinking */
+    width: 160px; /* Fixed width for items */
+    height: 160px;
+    border-radius: 15px;
+    background: #3e7fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: white;
+    position: relative;
+    font-size: 13px;
+}
+
+.story-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity:.2;
+    border-radius: 15px;
+}
+
+.story-item span {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 5px;
+    font-family: sans-serif;
+}
+
+.rounded {
+    background-image: url(https://example.com/favicon.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 32px;
+    height: 32px;
+    margin: 5px;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #3877e1;
+}
+
+.create-card {
+  position: absolute;
+  bottom: 10px; /* Positions the button at the bottom of the card */
+  left: 50%; /* Centers the button horizontally */
+  transform: translateX(-50%); /* Adjusts the button's centering */
+  background-color: #007bff; /* Sets the button background color to blue */
+  border: none;
+  padding: 15px; /* Provides padding around the icon */
+  border-radius: 50%; /* Makes the button round */
+  font-size: 24px; /* Increases the font size to make the icon larger */
+  cursor: pointer; /* Changes cursor to indicate clickable area */
+  width: 50px; /* Adjusts the width of the button */
+  height: 50px; /* Adjusts the height of the button */
+  text-align: center; /* Centers the icon within the button */
+  color: #ffffff; /* Sets the icon color to white for contrast */
+}
+   /* end of story */

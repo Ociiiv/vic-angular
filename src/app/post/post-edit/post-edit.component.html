@@ -1,0 +1,26 @@
+<!-- post-edit.component.html -->
+<!-- <button *ngIf="!isEditMode" (click)="editPost()">Edit</button> -->
+
+<div class="modal-background" *ngIf="isOpen">
+    <div class="modal-content">
+        <button class="close-button" (click)="closeModal()">&times;</button>
+        <form (ngSubmit)="onUpdatePost()">
+            <h2>
+                <mat-icon class="custom-icon">edit</mat-icon> Edit Post
+            </h2>
+            
+            <label for="title">Title:</label>
+            <input type="text" [(ngModel)]="post.title" name="title" required>
+            <label for="content">Content:</label>
+            <textarea [(ngModel)]="post.content" name="content" required></textarea>
+            <label for="imageUrl">Image URL:</label>
+            <input type="text" [(ngModel)]="post.imageUrl" name="imageUrl" required>
+            <!-- Display the image if the URL is present -->
+            <img class="post-image" *ngIf="post.imageUrl" [src]="post.imageUrl" alt="Post Image" />
+            <button mat-raised-button color="primary" (click)="updatePost(post)">
+                <mat-icon>autorenew</mat-icon> Update Post
+            </button>
+            
+        </form>
+    </div>
+</div>

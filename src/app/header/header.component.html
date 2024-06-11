@@ -1,0 +1,48 @@
+<header>
+   <nav>
+     <ul>
+       <li>
+        <button id="search_btn" class="tooltip" data-tooltip="Search">
+          
+      </button>
+      
+        
+       </li>
+       <li id="space2"></li>
+       <li><span class="tooltip active" data-tooltip="Home" id="home" (click)="navigateToHome()">
+        <i class="fas fa-home"></i>
+      </span></li>
+      
+       <li id="space1"></li>
+       <li>
+         <button class="tooltip" data-tooltip="Add" id="btn_plus" routerLink="/create">
+           <i class="fas fa-plus"></i>
+         </button>
+       </li>
+       <li>
+         <button class="tooltip" data-tooltip="Message" id="btn_msg">
+          
+         </button>
+       </li>
+       
+       <li>
+        <button class="tooltip" data-tooltip="Profile" id="profile_icon" (click)="goToProfile()">
+          <i class="fas fa-user-circle"></i>
+        </button>
+      </li>
+      
+       <li>
+        <button class="tooltip" data-tooltip="Settings" id="btn_profile" (click)="navigateToChangePassword()">
+          <i class="fas fa-cog"></i>
+        </button>
+        
+       </li>
+       <li class="logout-icon" *ngIf="authService.isLoggedIn()">
+         <button class="tooltip" data-tooltip="Logout" (click)="logout()">
+           <i class="fas fa-sign-out-alt"></i>
+         </button>
+       </li>
+     </ul>
+   </nav>
+ </header>
+ 

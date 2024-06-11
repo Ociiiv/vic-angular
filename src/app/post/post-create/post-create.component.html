@@ -1,0 +1,47 @@
+<br><mat-card>
+    <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+        <mat-form-field>
+            <input type="text"
+            matInput
+            type="text"
+            name="title"
+            ngModel
+            required
+            #title="ngModel"
+            />
+            <mat-error *ngIf="title.invalid">Please enter a post title.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea
+            matInput
+            rows="4"
+            name="content"
+            ngModel
+            required
+            #content="ngModel"
+            ></textarea>
+            <mat-error *ngIf="content.invalid"></mat-error>
+        </mat-form-field>
+        <!-- Image URL input -->
+        <mat-form-field>
+            <input
+            class="input"
+            matInput
+            type="text"
+            name="imageUrl"
+            ngModel
+            placeholder="Image URL"
+            #imageUrl="ngModel"
+            />
+            <mat-error *ngIf="imageUrl.invalid">
+            Please enter a valid image URL.
+            </mat-error>
+        </mat-form-field>
+        <!-- Display the image if the URL is present -->
+        <img *ngIf="imageUrl.value && isValidUrl(imageUrl.value)" [src]="imageUrl.value" alt="Post Image">
+        <br>
+        <button mat-flat-button type="submit">
+        <mat-icon>save</mat-icon> Save
+        </button>
+    </form>
+</mat-card>

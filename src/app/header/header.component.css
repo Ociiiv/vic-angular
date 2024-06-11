@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+  }
+  :root {
+    --btn-width-100: 100px;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  #search-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  #search_btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .fa-search {
+    color: #333;
+  }
+  
+  .search-input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding-left: 30px; /* Adjust as needed */
+    width: 120px; /* Adjust as needed */
+    height: 30px; /* Adjust as needed */
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .search-results {
+    margin-top: 10px;
+  }
+  
+  .result-item {
+    margin-bottom: 10px;
+  }
+  
+  .result-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  
+  
+  nav {
+    margin: 0;
+    padding: 0;
+  }
+  nav ul {
+    margin: 0;
+    padding: 8px 15px;
+    list-style: none;
+    display: flex;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    background: linear-gradient(rgb(204, 0, 0),rgb(28, 26, 25));
+  }
+  nav ul li {
+    padding: 3px;
+  }
+  nav ul li a,
+  nav ul li button,
+  nav ul li span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    color: #ffffff; /* Consistent white color for all icons */
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  nav ul li#space1 {
+    flex: 1;
+  }
+  nav ul li#space2 {
+    flex: 2;
+  }
+  nav ul li a#fb,
+  nav ul li span#fb {
+    background: #0B84ED;
+    font-size: 2rem;
+    color: #ffffff;
+    border-radius: 50%;
+  }
+  nav ul li a:hover,
+  nav ul li button:hover,
+  nav ul li span:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: #ffffff;
+  }
+  nav ul li .tooltip {
+    position: relative;
+  }
+  nav ul li .tooltip::after {
+    content: attr(data-tooltip);
+    height: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    position: absolute;
+    bottom: -150%;
+    padding: 5px 12px;
+    line-height: 30px;
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    user-select: none;
+    z-index: 1000; /* Ensure the tooltip is above other content */
+  }
+  nav ul li .tooltip:hover::after {
+    opacity: 1;
+  }
+  nav ul li .tooltip#btn_profile::after {
+    margin-left: -20px;
+  }
+  @media screen and (max-width: 700px) {
+    nav ul li#space1,
+    nav ul li#space2 {
+      display: none;
+    }
+    nav ul {
+      min-width: 600px;
+      padding: 8px 12px;
+      justify-content: space-between;
+    }
+    :root {
+      --btn-width-100: 60px;
+    }
+  }
+  

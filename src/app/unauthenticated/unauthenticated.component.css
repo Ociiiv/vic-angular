@@ -1,0 +1,35 @@
+/* src/app/unauthenticated/unauthenticated.component.css */
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+}
+
+.welcome-message {
+    max-width: 400px; /* Adjust as needed */
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons {
+    margin-top: 20px;
+}
+
+.action-button {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}

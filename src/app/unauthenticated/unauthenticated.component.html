@@ -1,0 +1,11 @@
+<!-- src/app/unauthenticated/unauthenticated.component.html -->
+<div class="centered-content" *ngIf="!isLoggedIn">
+    <div class="welcome-message">
+        <h2>Welcome</h2>
+        <p>Please log in or register to continue.</p>
+        <div class="action-buttons">
+            <a routerLink="/login" class="action-button">Login</a>
+            <a routerLink="/register" class="action-button">Register</a>
+        </div>
+    </div>
+</div>
